@@ -1,20 +1,44 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Studio Blubird Landing Page
 
-# Run and deploy your AI Studio app
+A stunning, high-performance landing page for Studio Blubird, built with React, Vite, and Tailwind CSS.
 
-This contains everything you need to run your app locally.
+## 🚀 Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1_3HLecX--BcPI_fYocpf3u0wyiU5P2n2
+- **Modern Design**: Clean and responsive layout using Tailwind CSS.
+- **Smooth Animations**: Powered by Framer Motion for a premium feel.
+- **High Performance**: Optimized build with Vite.
 
-## Run Locally
+## 🛠️ Getting Started
 
-**Prerequisites:**  Node.js
+### Prerequisites
 
+- Node.js (v18 or higher recommended)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Installation
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 📦 Deployment
+
+### Vercel
+
+This project is optimized for deployment on [Vercel](https://vercel.com).
+
+1. Push your code to a GitHub repository.
+2. Log in to Vercel and import your project from GitHub.
+3. Vercel will automatically detect that this is a **Vite** project and configure the build settings (`npm run build`) and output directory (`dist`) for you.
+4. Click **Deploy**.
+

@@ -49,7 +49,7 @@ const projects: Project[] = [
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   const ref = useRef<HTMLDivElement>(null);
-  
+
   // Motion values for parallax effect
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -65,14 +65,14 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       const height = rect.height;
       const mouseXPos = event.clientX - rect.left;
       const mouseYPos = event.clientY - rect.top;
-      
+
       // Calculate position relative to center (-0.5 to 0.5)
       const xPct = (mouseXPos / width) - 0.5;
       const yPct = (mouseYPos / height) - 0.5;
-      
+
       // Move image opposite to mouse (parallax)
-      x.set(-xPct * 20); 
-      y.set(-yPct * 20); 
+      x.set(-xPct * 20);
+      y.set(-yPct * 20);
     }
   }
 
@@ -82,7 +82,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   }
 
   return (
-    <div 
+    <div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -90,11 +90,11 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
     >
       <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-8 bg-white/5 border border-white/5 group-hover:border-white/20 transition-colors duration-300">
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 pointer-events-none" />
-        
+
         {/* Parallax Image */}
-        <motion.img 
-          src={project.image} 
-          alt={project.brand} 
+        <motion.img
+          src={project.image}
+          alt={project.brand}
           style={{
             x: mouseX,
             y: mouseY,
@@ -104,17 +104,17 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           transition={{ duration: 0.5 }}
           className="w-full h-full object-cover"
         />
-        
+
         {/* Overlay Badge */}
-        <div className="absolute top-6 right-6 z-20 bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10 group-hover:bg-brand-purple/20 group-hover:border-brand-purple/30 transition-colors">
-           <span className="text-xs font-medium text-white font-sans">{project.metric}</span>
+        <div className="absolute top-6 right-6 z-20 bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-brand-primary/30 group-hover:bg-brand-primary/30 group-hover:border-brand-primary/50 transition-colors">
+          <span className="text-xs font-medium text-white font-sans">{project.metric}</span>
         </div>
       </div>
 
       <div className="flex justify-between items-start px-2">
         <div>
           <h3 className="text-2xl font-serif italic text-white mb-2 group-hover:text-brand-light transition-colors">{project.brand}</h3>
-          <p className="text-sm text-gray-500 font-sans font-light">{project.category} — {project.description}</p>
+          <p className="text-sm text-gray-400 font-sans font-light">{project.category} — {project.description}</p>
         </div>
       </div>
     </div>
@@ -126,9 +126,9 @@ export const OurWork: React.FC = () => {
     <section id="work" className="py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-24">
         <div className="text-center">
-           <div className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6">
-             <span className="text-gray-300 text-[10px] uppercase tracking-widest font-sans font-medium">Portfolio</span>
-           </div>
+          <div className="inline-block px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/10 backdrop-blur-sm mb-6">
+            <span className="text-brand-light text-[10px] uppercase tracking-widest font-sans font-medium">Portfolio</span>
+          </div>
           <h2 className="text-5xl md:text-7xl text-white leading-tight">
             <span className="font-serif italic text-white block">Projects.</span>
           </h2>
@@ -144,10 +144,10 @@ export const OurWork: React.FC = () => {
           className="flex gap-10 px-4"
           // Animate from -50% to 0% to create a left-to-right flow
           animate={{ x: ["-50%", "0%"] }}
-          transition={{ 
-            ease: "linear", 
+          transition={{
+            ease: "linear",
             duration: 40, // Slower speed for better visibility
-            repeat: Infinity 
+            repeat: Infinity
           }}
           style={{ width: "max-content" }}
         >

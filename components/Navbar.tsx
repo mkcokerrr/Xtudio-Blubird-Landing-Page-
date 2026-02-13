@@ -21,9 +21,8 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-8'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-8'
+          }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
           {/* Logo */}
@@ -48,7 +47,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:block">
             <a
               href="#contact"
-              className="bg-white text-black px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors font-sans"
+              className="bg-brand-cta text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-brand-cta/90 hover:-translate-y-0.5 transition-all duration-200 font-sans shadow-lg shadow-brand-cta/20"
             >
               Book a call
             </a>
@@ -86,7 +85,7 @@ export const Navbar: React.FC = () => {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="bg-white text-black px-8 py-4 rounded-full text-lg font-bold mt-4"
+              className="bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold mt-4 shadow-lg shadow-brand-cta/20"
             >
               Book a Call
             </a>

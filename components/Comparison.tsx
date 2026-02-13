@@ -21,16 +21,16 @@ const solutions = [
 export const Comparison: React.FC = () => {
   return (
     <section id="comparison" className="py-32 relative overflow-hidden">
-       {/* Background Pillars - Subtle */}
-       <div className="absolute inset-0 w-full h-full pointer-events-none">
+      {/* Background Pillars - Subtle */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
         <div className="absolute bottom-0 left-[10%] w-[30%] h-[50vh] bg-gradient-to-t from-brand-purple/10 to-transparent blur-[80px]" />
         <div className="absolute bottom-0 right-[10%] w-[30%] h-[50vh] bg-gradient-to-t from-brand-blue/10 to-transparent blur-[80px]" />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <div className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6">
-            <span className="text-gray-300 text-[10px] uppercase tracking-widest font-sans font-medium">The Problem vs The Solution</span>
+          <div className="inline-block px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/10 backdrop-blur-sm mb-6">
+            <span className="text-brand-light text-[10px] uppercase tracking-widest font-sans font-medium">The Problem vs The Solution</span>
           </div>
           <h2 className="text-4xl md:text-6xl text-white leading-tight">
             <span className="font-sans font-medium block mb-2">Why would you want to</span>
@@ -40,7 +40,7 @@ export const Comparison: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Competitor Card */}
-          <motion.div 
+          <motion.div
             initial={{ x: -30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -49,7 +49,7 @@ export const Comparison: React.FC = () => {
             <h3 className="text-2xl font-serif mb-10 text-gray-400 italic">Other Agencies</h3>
             <ul className="space-y-6">
               {painPoints.map((point, idx) => (
-                <li key={idx} className="flex items-start gap-4 text-gray-500 font-sans">
+                <li key={idx} className="flex items-start gap-4 text-gray-400 font-sans">
                   <X className="w-5 h-5 text-gray-600 shrink-0 mt-0.5" />
                   <span className="font-light text-sm md:text-base">{point}</span>
                 </li>
@@ -58,7 +58,7 @@ export const Comparison: React.FC = () => {
           </motion.div>
 
           {/* Our Card */}
-          <motion.div 
+          <motion.div
             initial={{ x: 30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -71,8 +71,8 @@ export const Comparison: React.FC = () => {
             <ul className="space-y-6 relative z-10">
               {solutions.map((point, idx) => (
                 <li key={idx} className="flex items-start gap-4 text-white font-sans">
-                  <div className="w-5 h-5 rounded-full bg-brand-purple/20 flex items-center justify-center shrink-0 mt-0.5 border border-brand-purple/20">
-                    <Check className="w-3 h-3 text-brand-light" />
+                  <div className="w-5 h-5 rounded-full bg-brand-cta/20 flex items-center justify-center shrink-0 mt-0.5 border border-brand-cta/30">
+                    <Check className="w-3 h-3 text-brand-cta" />
                   </div>
                   <span className="font-light text-sm md:text-base">{point}</span>
                 </li>

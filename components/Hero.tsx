@@ -5,9 +5,9 @@ import { ArrowRight } from 'lucide-react';
 export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
-      
+
       <div className="max-w-6xl mx-auto px-6 text-center relative z-10 flex flex-col items-center">
-        
+
         {/* Social Proof Pill */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -36,8 +36,8 @@ export const Hero: React.FC = () => {
             Ad Creatives.
           </h1>
         </motion.div>
-        
-        <motion.p 
+
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -53,19 +53,19 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="w-full flex flex-col items-center"
         >
-           <a 
-             href="#contact"
-             className="bg-white text-black px-10 py-5 rounded-full font-sans font-bold hover:bg-gray-200 transition-colors text-lg"
-           >
-             Book a Call
-           </a>
-           
-           {/* Social Icons */}
-           <div className="flex justify-center gap-6 mt-12 opacity-40">
-             {['Meta', 'TikTok', 'Google'].map((platform) => (
-               <span key={platform} className="text-xs font-sans uppercase tracking-widest text-white">{platform}</span>
-             ))}
-           </div>
+          <a
+            href="#contact"
+            className="bg-brand-cta text-white px-10 py-5 rounded-full font-sans font-bold hover:bg-brand-cta/90 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-cta/20 transition-all duration-300 text-lg"
+          >
+            Book a Call
+          </a>
+
+          {/* Social Icons */}
+          <div className="flex justify-center gap-6 mt-12 opacity-40">
+            {['Meta', 'TikTok', 'Google'].map((platform) => (
+              <span key={platform} className="text-xs font-sans uppercase tracking-widest text-white">{platform}</span>
+            ))}
+          </div>
         </motion.div>
 
       </div>
