@@ -2,12 +2,16 @@ import React from 'react';
 import { Analytics } from "@vercel/analytics/react"
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Comparison } from './components/Comparison';
+import { Problem } from './components/Problem';
+import { Outcome } from './components/Outcome';
+import { Solution } from './components/Solution';
+import { Deliverables } from './components/Deliverables';
 import { Process } from './components/Process';
-import { OurWork } from './components/OurWork';
-import { Testimonials } from './components/Testimonials';
+import { Pricing } from './components/Pricing';
 import { Guarantee } from './components/Guarantee';
+import { Audience } from './components/Audience';
 import { FAQ } from './components/FAQ';
+import { FinalCTA } from './components/FinalCTA';
 
 function App() {
   return (
@@ -31,12 +35,16 @@ function App() {
         <Navbar />
         <main>
           <Hero />
-          <Comparison />
+          <Problem />
+          <Outcome />
+          <Solution />
+          <Deliverables />
           <Process />
-          <OurWork />
-          <Testimonials />
-          <FAQ />
+          <Pricing />
           <Guarantee />
+          <Audience />
+          <FAQ />
+          <FinalCTA />
         </main>
       </div>
       <Analytics />

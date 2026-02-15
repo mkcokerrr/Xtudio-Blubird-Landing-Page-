@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Calendar, Clock } from 'lucide-react';
+import { ShieldCheck, Calendar, Clock, RefreshCw } from 'lucide-react';
 
 export const Guarantee: React.FC = () => {
   return (
-    <section id="guarantee" className="py-32 relative overflow-hidden">
+    <section id="guarantee" className="py-24 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[60vh] bg-gradient-to-t from-brand-purple/10 to-transparent blur-[120px]" />
@@ -26,41 +26,36 @@ export const Guarantee: React.FC = () => {
           </h2>
 
           <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-16 font-light font-sans">
-            We know agencies can be flaky. We aren't. We put skin in the game.
+            Risk Reversal That’s Actually Fair.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 text-left">
-            <div className="bg-white/[0.02] p-8 rounded-3xl border border-white/5 hover:border-white/10 transition-colors">
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white/[0.02] p-8 rounded-3xl border border-white/5 hover:border-white/10 transition-all"
+            >
               <div className="flex items-center gap-4 mb-4">
                 <Clock className="w-5 h-5 text-gray-400" />
                 <h3 className="font-serif italic text-lg text-white">Late Delivery?</h3>
               </div>
               <p className="text-gray-400 text-sm font-light leading-relaxed font-sans">
-                If we miss the agreed delivery date, you get an <span className="text-white font-medium">extra bonus refresh pack</span> (images + cutdowns) for free.
+                If we miss the agreed delivery date, you get an <span className="text-white font-medium">extra bonus refresh pack</span> (images + cutdowns) free.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white/[0.02] p-8 rounded-3xl border border-white/5 hover:border-white/10 transition-colors">
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white/[0.02] p-8 rounded-3xl border border-white/5 hover:border-white/10 transition-all"
+            >
               <div className="flex items-center gap-4 mb-4">
-                <RefreshCwIcon className="w-5 h-5 text-gray-400" />
+                <RefreshCw className="w-5 h-5 text-gray-400" />
                 <h3 className="font-serif italic text-lg text-white">Not Satisfied?</h3>
               </div>
               <p className="text-gray-400 text-sm font-light leading-relaxed font-sans">
-                If after the first month the quality isn't on-brand, we'll do <span className="text-white font-medium">one additional revision round</span> at no cost.
+                If after Month 1 you feel the creative isn’t on-brand or usable, you get <span className="text-white font-medium">one additional revision round</span> at no cost.
               </p>
-            </div>
+            </motion.div>
           </div>
-        </div>
-
-        {/* Footer CTA */}
-        <div id="contact" className="mt-32 text-center">
-          <h2 className="text-4xl md:text-6xl font-sans font-medium mb-12 text-white">Ready to scale?</h2>
-          <a href="mailto:hello@studioblubird.com" className="inline-block px-12 py-5 bg-brand-cta text-white text-lg font-bold rounded-full hover:bg-brand-cta/90 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-cta/20 transition-all duration-300 font-sans">
-            Book a Discovery Call
-          </a>
-          <p className="mt-16 text-gray-700 text-xs font-light tracking-wide font-sans">
-            © {new Date().getFullYear()} Studio Blubird. All rights reserved.
-          </p>
         </div>
 
       </div>

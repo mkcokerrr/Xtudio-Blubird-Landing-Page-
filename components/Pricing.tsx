@@ -1,127 +1,99 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
-import { PricingTier } from '../types';
+import { Check } from 'lucide-react';
 
-const tiers: PricingTier[] = [
+const plans = [
   {
     name: "Starter",
     price: "$1,500",
-    description: "Best for early-stage brands testing consistency.",
+    desc: "Best for early-stage brands building consistency.",
     features: [
-      "2 Hero Videos",
-      "12 Performance Images",
-      "4-6 Video Cutdowns",
-      "1 Mini Refresh Pack",
-      "Monthly Angle Strategy"
+      "2 hero videos",
+      "12 images",
+      "4–6 cutdowns",
+      "1 mini refresh pack"
     ],
-    cta: "Start Testing",
-    recommended: false
+    cta: "Start Starter Plan"
   },
   {
     name: "Growth",
     price: "$2,500",
-    description: "For brands actively spending and needing steady winners.",
+    desc: "Best for brands actively spending and needing steady winners.",
+    popular: true,
     features: [
-      "3 Hero Videos",
-      "18 Performance Images",
-      "8-10 Video Cutdowns",
-      "Mid-Month Refresh Pack",
-      "Organic Boost Pack",
-      "Detailed Insights Report"
+      "3 hero videos",
+      "18 images",
+      "8–10 cutdowns",
+      "mid-month refresh pack"
     ],
-    cta: "Scale Now",
-    recommended: true
+    cta: "Apply for Growth Plan"
   },
   {
     name: "Scale",
     price: "$3,500",
-    description: "For brands pushing spend and fighting heavy fatigue.",
+    desc: "Best for brands pushing spend and fighting heavy fatigue.",
     features: [
-      "4 Hero Videos",
-      "25 Performance Images",
-      "10-14 Video Cutdowns",
-      "2 Refresh Packs / Month",
-      "Priority 48h Turnaround",
-      "Dedicated Creative Strategist",
-      "Unlimited Revisions"
+      "4 hero videos",
+      "25 images",
+      "10–14 cutdowns",
+      "2 refreshes per month"
     ],
-    cta: "Dominate",
-    recommended: false
+    cta: "Apply for Scale Plan"
   }
 ];
 
 export const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="py-32 relative overflow-hidden">
-       {/* Gradient Pillars */}
-       <div className="absolute inset-0 w-full h-full pointer-events-none">
-        <div className="absolute bottom-0 left-[20%] w-[60%] h-[60vh] bg-gradient-to-t from-brand-purple/5 to-transparent blur-[120px]" />
+    <section id="pricing" className="py-24 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-[40vh] bg-brand-blue/5 blur-[100px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-24">
-           <div className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6">
-             <span className="text-gray-300 text-[10px] uppercase tracking-widest font-sans font-medium">Investment</span>
-           </div>
-          <h2 className="text-4xl md:text-6xl text-white leading-tight">
-             <span className="font-sans font-medium block mb-2">Simple,</span>
-             <span className="font-serif italic text-white/90 block">scalable pricing.</span>
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl text-white font-sans font-medium mb-4">
+            Packages & Pricing
           </h2>
-          <p className="mt-8 text-gray-400 font-light font-sans">Pause or cancel anytime. No long-term contracts.</p>
+          <p className="text-gray-400 font-light text-sm">
+            We take on a limited number of brands per month to keep quality high.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 items-stretch">
-          {tiers.map((tier, index) => (
+        <div className="grid md:grid-cols-3 gap-8 items-start">
+          {plans.map((plan, idx) => (
             <motion.div
-              key={tier.name}
-              initial={{ opacity: 0, y: 30 }}
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className={`relative rounded-[2rem] p-10 flex flex-col h-full transition-all duration-300 group ${
-                tier.recommended 
-                  ? 'bg-white/[0.03] border border-brand-purple/30' 
-                  : 'bg-transparent border border-white/10 hover:border-white/20'
-              }`}
+              transition={{ delay: idx * 0.1 }}
+              className={`relative p-8 rounded-[2rem] border ${plan.popular ? 'bg-white/[0.05] border-brand-purple/50' : 'bg-white/[0.02] border-white/5'} flex flex-col h-full`}
             >
-              {tier.recommended && (
-                <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                  <div className="bg-brand-purple text-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider font-sans shadow-lg">
-                    Most Popular
-                  </div>
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-purple text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">
+                  Most Popular
                 </div>
               )}
-              
-              <div className="mb-10 text-center">
-                <h3 className="text-2xl font-serif italic text-white mb-4">{tier.name}</h3>
-                <div className="flex items-center justify-center gap-1 mb-6">
-                  <span className="text-4xl font-sans font-medium text-white">{tier.price}</span>
-                  <span className="text-gray-500 font-light font-sans text-sm">/mo</span>
-                </div>
-                <p className="text-sm text-gray-400 leading-relaxed font-light font-sans min-h-[40px]">{tier.description}</p>
-              </div>
 
-              <div className="flex-1 mb-10">
-                <ul className="space-y-4">
-                  {tier.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-gray-300 font-light font-sans group-hover:text-white transition-colors">
-                      <CheckCircle2 className={`w-5 h-5 shrink-0 ${tier.recommended ? 'text-brand-purple' : 'text-gray-600'}`} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <h3 className="text-xl font-sans font-medium text-white mb-2">{plan.name}</h3>
+              <div className="text-3xl font-serif italic text-white mb-4">{plan.price} <span className="text-sm font-sans font-light text-gray-500 not-italic">/ month</span></div>
+              <p className="text-gray-400 text-sm font-light mb-8 h-10">{plan.desc}</p>
 
-              <a 
+              <ul className="space-y-4 mb-10 flex-1">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3 text-gray-300 text-sm font-light">
+                    <Check className="w-4 h-4 text-brand-cta shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <a
                 href="#contact"
-                className={`w-full py-4 rounded-full font-bold text-sm text-center transition-all font-sans ${
-                  tier.recommended 
-                    ? 'bg-white text-black hover:bg-gray-200' 
-                    : 'bg-white/10 text-white hover:bg-white/20'
-                }`}
+                className={`block w-full text-center py-4 rounded-full font-sans font-bold transition-all duration-300 ${plan.popular ? 'bg-brand-cta text-white hover:bg-brand-cta/90' : 'bg-white/10 text-white hover:bg-white/20'}`}
               >
-                {tier.cta}
+                {plan.cta}
               </a>
             </motion.div>
           ))}
