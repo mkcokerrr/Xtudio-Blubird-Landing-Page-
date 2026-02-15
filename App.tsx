@@ -7,7 +7,7 @@ import { Outcome } from './components/Outcome';
 import { Solution } from './components/Solution';
 import { Deliverables } from './components/Deliverables';
 import { Process } from './components/Process';
-import { Pricing } from './components/Pricing';
+import { Projects } from './components/Projects';
 import { Guarantee } from './components/Guarantee';
 import { Audience } from './components/Audience';
 import { FAQ } from './components/FAQ';
@@ -39,8 +39,8 @@ function App() {
           <Outcome />
           <Solution />
           <Deliverables />
+          <Projects />
           <Process />
-          <Pricing />
           <Guarantee />
           <Audience />
           <FAQ />

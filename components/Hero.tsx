@@ -58,13 +58,6 @@ export const Hero: React.FC = () => {
             Book a Free Creative Audit
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
-
-          <a
-            href="#pricing"
-            className="text-white/70 px-8 py-4 rounded-full font-sans font-medium hover:text-white hover:bg-white/5 transition-all duration-300 text-lg"
-          >
-            See Packages & Pricing
-          </a>
         </motion.div>
 
         {/* Built For / Best For */}
